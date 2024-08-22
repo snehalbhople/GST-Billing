@@ -1,0 +1,49 @@
+server:
+  port: 9001
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/gstbilling?createDatabaseIfNotExist=true&autoReconnect=true&showSSL=false
+    username: root
+    password: Snehal@10
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  # GMail Properties
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: bhoplesnehal10@gmail.com
+    password: pphx djtj omml kqcb
+
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  main:
+    allow-circular-references: true
+
+  #MultiPart files Configuration
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 5MB
+      max-request-size: 5MB
+      file-size-threshold: 3KB
+
+jwt:
+  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+  expiration: 86400000    # A Day in MilliSeconds
+
+# Local Path for Storing PDF
+local:
+  disk:
+    path: D:/BillingSys/
